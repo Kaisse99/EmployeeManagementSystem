@@ -9,15 +9,16 @@ import Foundation
 class Employee {
     var name : String
     var id : Int
-    var salary : Double
-    
-    init(name: String, id: Int, salary: Double) {
-        self.name = name
-        self.id = id
-        self.salary = salary
+    var salary : Double {
+        return 0.0
     }
     
-    public func displayDetails() -> String {
+    init(name: String, id: Int) {
+        self.name = name
+        self.id = id
+    }
+    
+     func displayDetails() -> String {
         return "\(name) | \(id) | \(salary)"
     }
     
