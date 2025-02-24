@@ -6,8 +6,8 @@
 //
 import Foundation;
 
-class FullTimeEmployee : Employee {
-    var monthlySalary : Double;
+class FullTimeEmployee : Employee, Taxable {
+    var monthlySalary : Double
     
     init(name : String, id : Int, monthlySalary : Double) {
         self.monthlySalary = monthlySalary
@@ -18,9 +18,41 @@ class FullTimeEmployee : Employee {
             return monthlySalary
         }
     
+    func calculateTax() -> Double {
+        return salary * 0.20
+    }
+    
+    func displayDetails() {
+        print("Employee ID: \(id)")
+        print("Employee name: \(name)")
+        print("Employee salary \(salary)")
+        print("Tax: \(calculateTax())")
+    }
+    
 }
 
-class PartTimeEmployee : Employee {
+class PartTimeEmployee : Employee, Taxable  {
+    var hourlyRate : Double
+    var hoursWorked : Int
+    init(name: String, id: Int, hourlyRate: Double, hoursWorked: Int) {
+        self.hourlyRate = hourlyRate
+        self.hoursWorked = hoursWorked
+        super.init(name: name, id: id)
+    }
     
+    override var salary: Double {
+            return hourlyRate * Double(hoursWorked)
+    }
+    
+    func calculateTax() -> Double {
+        return salary * 0.10
+    }
+    
+     func displayDetails() {
+        print("Employee ID: \(id)")
+        print("Employee name: \(name)")
+        print("Employee salary \(salary)")
+        print("Tax: \(calculateTax())")
+    }
     
 }
