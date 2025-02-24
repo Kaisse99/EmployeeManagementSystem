@@ -8,6 +8,5 @@
 import Foundation
 protocol Taxable {
     func calculateTax() -> Double
-    
-    
+    func displayDetails()
 }
