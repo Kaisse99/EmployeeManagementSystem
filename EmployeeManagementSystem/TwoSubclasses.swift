@@ -21,13 +21,10 @@ class FullTimeEmployee : Employee, Taxable {
     func calculateTax() -> Double {
         return salary * 0.20
     }
-    
-    func displayDetails() {
-        print("Employee ID: \(id)")
-        print("Employee name: \(name)")
-        print("Employee salary \(salary)")
-        print("Tax: \(calculateTax())")
-    }
+    override func displayDetails() {
+            let tax = calculateTax()
+            print("\(name) | \(id) | Salary: \(salary) | Tax: \(tax)")
+        }
     
 }
 
@@ -48,11 +45,10 @@ class PartTimeEmployee : Employee, Taxable  {
         return salary * 0.10
     }
     
-     func displayDetails() {
-        print("Employee ID: \(id)")
-        print("Employee name: \(name)")
-        print("Employee salary \(salary)")
-        print("Tax: \(calculateTax())")
-    }
+    override func displayDetails() {
+            let tax = calculateTax()
+            print("\(name) | \(id) | Salary: \(salary) | Tax: \(tax)")
+        }
+
     
 }

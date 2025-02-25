@@ -2,16 +2,13 @@
 //  main.swift
 //  EmployeeManagementSystem
 //
-//  Created by Mykyta Kaisenberg on 2025-02-21.
+//  Created by Mykyta Varnikov on 2025-02-21.
 //
-
 import Foundation
+
 func menu() {
-    let manager = EmployeeManager()
-    
     while true {
         print("Enter your choice: ", terminator: " ")
-        
         guard let choice = readLine(), let option = Int(choice) else {
             print("Invalid input. Please enter a number between 1 and 6.")
             return
@@ -37,6 +34,7 @@ func menu() {
             }
             let employee = FullTimeEmployee(name: name, id: inputId, monthlySalary: salInput)
             manager.addEmployee(employee)
+            
             
         case 2:
             print("Enter a Part-Time employee ID: ", terminator: " ")
@@ -92,6 +90,7 @@ func menu() {
         }
     }
 }
+let manager = EmployeeManager()
 print("=====Employee Management System=====")
 print("1. Add Full-Time Employee")
 print("2. Add Part-Time Employee")
@@ -101,3 +100,4 @@ print("5. Search for and Employee by ID")
 print("6. Exit")
 print("====================================")
 menu()
+

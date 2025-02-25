@@ -18,8 +18,8 @@ class Employee {
         self.id = id
     }
     
-     func displayDetails() -> String {
-        return "\(name) | \(id) | \(salary)"
+     func displayDetails(){
+        print("\(name) | \(id) | \(salary)")
     }
     
 }
