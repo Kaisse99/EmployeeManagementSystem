@@ -2,7 +2,7 @@
 //  Taxable.swift
 //  EmployeeManagementSystem
 //
-//  Created by Mykyta Kaisenberg on 2025-02-24.
+//  Created by Mykyta Varnikov on 2025-02-24.
 //
 
 import Foundation
